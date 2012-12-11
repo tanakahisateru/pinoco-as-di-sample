@@ -1,10 +1,15 @@
 <?php
-require_once 'vendor/pinoco/src/Pinoco.php';
-
-// ただのサンプルです。良い子のみんなはこんなローダー作っちゃダメだよ。
-spl_autoload_register(function($class) {
-    require_once __DIR__ . '/class/' . $class . '.php';
-});
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+else {
+    // 適当にPinocoを置いてください。
+    require_once __DIR__ . '/vendor/pinoco/pinoco/src/Pinoco.php';
+    // ただのサンプルです。良い子のみんなはこんなローダー作っちゃダメだよ。
+    spl_autoload_register(function($class) {
+        require_once __DIR__ . '/class/' . $class . '.php';
+    });
+}
 
 /**
  * システムグローバルなDIコンテナを提供するファクトリ

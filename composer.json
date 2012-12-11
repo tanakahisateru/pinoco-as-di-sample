@@ -1,0 +1,16 @@
+{
+    "name": "tanakahisateru/pinoco-as-di-sample",
+    "authors": [
+        {
+            "name": "Hisateru Tanaka",
+            "email": "tanakahisateru@gmail.com"
+        }
+    ],
+    "require": {
+        "php":">=5.3.6",
+        "pinoco/pinoco":"dev-master"
+    },
+    "autoload": {
+        "classmap": ["class/"]
+    }
+}
